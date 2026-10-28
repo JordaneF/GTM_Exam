@@ -19,7 +19,7 @@ window.shopHooks = window.shopHooks || {};
 /* Fiche Produit */
 shopHooks.viewItem = function (data) {
    var item = versItem(data.product);
-   item.item_id = data.id
+   item.item_id = data.id;
    item.item_name = data.name;
    item.item_brand = data.brand;
    item.item_category = data.category;
