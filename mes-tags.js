@@ -16,6 +16,21 @@ window.shopHooks = window.shopHooks || {};
 
 /* ---------- Écrivez votre code ci-dessous ---------- */
 
+
+/* Le dictionnaire : vocabulaire de la boutique → vocabulaire GA4 */
+function versItem(x) {
+  return {
+    item_id: x.sku,
+    item_name: x.name,
+    item_brand: x.brand,
+    item_category: x.category,
+    item_variant: x.size,       // vide quand on regarde un produit sans taille choisie
+    price: x.price,
+    quantity: x.quantity || 1   // 1 par défaut
+  };
+  }
+
+
 /* Fiche Produit */
 shopHooks.viewItem = function (data) {
    var item = versItem(data.product);
