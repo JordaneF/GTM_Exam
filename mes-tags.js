@@ -119,3 +119,13 @@ shopHooks.purchase = function (data) {
     }
   });
 };
+
+
+shopHooks.couponApplied = function (data) {
+  dataLayer.push({
+    event: "coupon_applied",
+    coupon_code: data.coupon,
+    coupon_valid: data.valid ? "oui" : "non"
+  });
+};
+
